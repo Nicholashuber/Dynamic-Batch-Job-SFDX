@@ -50,7 +50,7 @@ global class DynamicIntervalBatchJob implements Database.Batchable<sObject>, Sch
         String cronExp = '0 ' + nextRun.minute() + ' ' + nextRun.hour() + ' * * ?';
 
         // Schedule the job with the same sObjectType and interval
-        System.schedule('DynamicIntervalBatchJob ' + sObjectType + ' ' + String.valueOf(now.getTime()), cronExp, new DynamicIntervalBatchJob(sObjectType, intervalMinutes));
+        System.schedule('DynamicIntervalBatchJob ' + sObjectType, cronExp, new DynamicIntervalBatchJob(sObjectType, intervalMinutes));
     }
 
     global void execute(SchedulableContext SC) {
