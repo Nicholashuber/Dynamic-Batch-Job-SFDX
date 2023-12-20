@@ -13,10 +13,10 @@ To execute the `DynamicIntervalBatchJob` from the Salesforce Apex Execute Anonym
    Database.executeBatch(batchJob, 1);
 
    // Note: Replace 'Account' with your desired sObject type and 30 with your desired interval in minutes.
+   ```
 
 
-
-   ### Execution Flow
+### Execution Flow
 When you execute the `DynamicIntervalBatchJob`, it follows this workflow:
 
 1. **Initialization**: Upon execution, the batch job is initialized with the specified sObject type (e.g., 'Account') and the interval (in minutes) at which it should run. This initialization happens when you execute the provided Apex script in the Salesforce Execute Anonymous Window.
